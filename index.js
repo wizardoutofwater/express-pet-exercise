@@ -49,6 +49,7 @@ app.get('/owners/:id', (req, res) => {
     let foundOwner = owners.find((element) => element.id === parseInt(req.params.id)) ;
     if (foundOwner !== undefined && foundOwner.length != 0){
         res.json(foundOwner);
+        console.log (foundOwner.pets);
     } else {
         res.status(404).send('No Owner Found with ID: ' + req.params.id)  ;
     }
@@ -70,13 +71,22 @@ app.post('/owners', (req, res) => {
 // PUT /api/owners/:id
 app.put('/owners/:id', (req, res) => {
     res.send('This is api/owners/:id')
-})
+});
 // DELETE /api/owners/:id
 app.delete('/owners/:id', (req, res) => {
-res.send('This is delete api/owners/:id')
-};
+res.send('This is delete api/owners/:id');
+});
 // GET /api/owners/:id/pets
-
+app.get('/owners/:id/pets', (req, res) => {
+    let foundOwner = owners.find((element) => element.id === parseInt(req.params.id)) ;
+    if (foundOwner !== undefined && foundOwner.length != 0){
+        res.json(foundOwner.pets);
+        console.log (foundOwner.pets);
+    } else {
+        // is this correct?
+        res.status(404).send('No Pets Found with for Owner ID: ' + req.params.id)  ;
+    }
+});
 // GET /api/owners/:id/pets/:petId
 
 // POST /api/owners/:id/pets
