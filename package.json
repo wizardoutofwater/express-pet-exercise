@@ -1,9 +1,9 @@
 {
   "name": "express-dog",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,5 +11,17 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanmrad/express-dog-exercise.git"
+  },
+  "bugs": {
+    "url": "https://github.com/juanmrad/express-dog-exercise/issues"
+  },
+  "homepage": "https://github.com/juanmrad/express-dog-exercise#readme",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
